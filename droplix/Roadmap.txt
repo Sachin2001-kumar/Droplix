@@ -1,0 +1,8 @@
+** This will show how i made this project what i learned and what i'm thinking during this basically it shows steps to acheive the project and my logical thinking **
+
+
+Day 1-3 
+
+First of all i started with database. Here i'm using neon db (basically postgresql) and Drizzle as ORM to talk my Database 
+I'm designing the First my database schema how look like your schema
+so, first think about what parts your database will required like id, name , path, createdAt etc. After that define a schema for that to implement this parts to define the schema for Drizzle ORM you can refer the their offical website for Neon Database "https://orm.drizzle.team/docs/get-started/neon-new"

@@ -10,5 +10,7 @@ so, first think about what parts your database will required like id, name , pat
 There is index file in db which help you to connect with the database. so, your all importmant links come into the env file and then the index file it will take this from the database.
 
 Day 4 
-It is basically it is a next of drizzle 
+It is basically it is a next of drizzle to push and generate the database 
+In this section we implment the zod validation so, basically zod validation is used to check the data of the our form and validate by itself. 
+Basically it is good pratice to validation in the form to sure the correct inputs 
 

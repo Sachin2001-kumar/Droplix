@@ -5,4 +5,10 @@ Day 1-3
 
 First of all i started with database. Here i'm using neon db (basically postgresql) and Drizzle as ORM to talk my Database 
 I'm designing the First my database schema how look like your schema
-so, first think about what parts your database will required like id, name , path, createdAt etc. After that define a schema for that to implement this parts to define the schema for Drizzle ORM you can refer the their offical website for Neon Database "https://orm.drizzle.team/docs/get-started/neon-new"
+so, first think about what parts your database will required like id, name , path, createdAt etc and also think about which of the columns you like keep unique and declared it a primary key also make any other column as unique if you required to make it unique . After that define a schema for that to implement this parts to define the schema for Drizzle ORM you can refer the their offical website for Neon Database "https://orm.drizzle.team/docs/get-started/neon-new"
+
+There is index file in db which help you to connect with the database. so, your all importmant links come into the env file and then the index file it will take this from the database.
+
+Day 4 
+It is basically it is a next of drizzle 
+

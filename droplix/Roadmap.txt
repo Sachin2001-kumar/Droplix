@@ -14,3 +14,4 @@ It is basically it is a next of drizzle to push and generate the database
 In this section we implment the zod validation so, basically zod validation is used to check the data of the our form and validate by itself. 
 Basically it is good pratice to validation in the form to sure the correct inputs 
 
+Day 5 

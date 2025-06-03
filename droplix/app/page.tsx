@@ -3,7 +3,7 @@ import SignUp from "@/components/SignUp";
 export default function Home() {
   return (
     <>
-      <SignUp />
+      <h1>Hello World</h1>
     </>
   );
 }

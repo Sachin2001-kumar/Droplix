@@ -17,7 +17,7 @@ export const files = pgTable("files", {
 
   //Ownership Information
   userId: text("user_id").notNull(),
-  parentId: uuid("parent_id").notNull(), //parent foldet id like /document/project/resume so, here parent of document is null, parent of project is document and parent of resume is project
+  parentId: uuid("parent_id"), //parent foldet id like /document/project/resume so, here parent of document is null, parent of project is document and parent of resume is project
 
   //boolean file/folder flag
   isFolder: boolean("is_folder").default(false).notNull(), // ye aap ko batayega ki jo upload kr rhe ho vo file h ya folder h (badi companys m yhi hota h like agar tum n koi favourate pe click kiya , starmark pe click kiya toh usse ki flag value true ho jati h (so, saari chezze boolean m hoti h ))

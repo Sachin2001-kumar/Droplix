@@ -63,7 +63,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    //you need to convert this into buffer because imagekit only pefer buffer so, now below we convert the image into buffer
+    //you need to convert this into buffer because imagekit only pefer buffer so, now below we convert the image into buffer and then convert the buffer into filebuffer
     const buffer = await file.arrayBuffer();
     const fileBuffer = Buffer.from(buffer);
 

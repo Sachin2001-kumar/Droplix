@@ -19,7 +19,7 @@ import {
   Eye,
   EyeOff,
 } from "lucide-react";
-import { signupschema } from "@/Schema/signupschema";
+import { signUpSchema } from "@/schemas/signUpSchema";
 
 export default function SignUpForm() {
   const router = useRouter();
@@ -38,8 +38,8 @@ export default function SignUpForm() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<z.infer<typeof signupschema>>({
-    resolver: zodResolver(signupschema),
+  } = useForm<z.infer<typeof signUpSchema>>({
+    resolver: zodResolver(signUpSchema),
     defaultValues: {
       email: "",
       password: "",
@@ -47,7 +47,7 @@ export default function SignUpForm() {
     },
   });
 
-  const onSubmit = async (data: z.infer<typeof signupschema>) => {
+  const onSubmit = async (data: z.infer<typeof signUpSchema>) => {
     if (!isLoaded) return;
 
     setIsSubmitting(true);

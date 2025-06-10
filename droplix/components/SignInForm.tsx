@@ -12,7 +12,7 @@ import { Input } from "@heroui/input";
 import { Card, CardBody, CardHeader, CardFooter } from "@heroui/card";
 import { Divider } from "@heroui/divider";
 import { Mail, Lock, AlertCircle, Eye, EyeOff } from "lucide-react";
-import { signinschema } from "@/Schema/signinschema";
+import { signInSchema } from "@/schemas/signInSchema";
 
 export default function SignInForm() {
   const router = useRouter();
@@ -25,15 +25,15 @@ export default function SignInForm() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<z.infer<typeof signinschema>>({
-    resolver: zodResolver(signinschema),
+  } = useForm<z.infer<typeof signInSchema>>({
+    resolver: zodResolver(signInSchema),
     defaultValues: {
       identifier: "",
       password: "",
     },
   });
 
-  const onSubmit = async (data: z.infer<typeof signinschema>) => {
+  const onSubmit = async (data: z.infer<typeof signInSchema>) => {
     if (!isLoaded) return;
 
     setIsSubmitting(true);

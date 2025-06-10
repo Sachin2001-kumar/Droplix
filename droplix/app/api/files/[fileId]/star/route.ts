@@ -40,7 +40,7 @@ export async function PATCH(
       .set({ isStarred: !file.isStarred })
       .where(and(eq(files.id, fileId), eq(files.userId, userId)))
       .returning();
-
+    //log the whole updatefiles
     const updatedFile = updatedFiles[0];
 
     return NextResponse.json(updatedFile);

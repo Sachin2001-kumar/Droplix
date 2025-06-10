@@ -1,6 +1,6 @@
-# Droply - Step by Step Guide
+# Droplix - Step by Step Guide
 
-This guide will walk you through recreating the Droply project, a file storage application built with Next.js, Clerk, Neon PostgreSQL, Drizzle ORM, and HeroUI.
+This guide will walk you through recreating the Droplix project, a file storage application built with Next.js, Clerk, Neon PostgreSQL, Drizzle ORM, and HeroUI.
 
 ## Prerequisites
 
@@ -16,8 +16,8 @@ Before starting, make sure you have the following:
 1. Create a new Next.js project:
 
 ```bash
-npx create-next-app@latest droply
-cd droply
+npx create-next-app@latest Droplix
+cd Droplix
 ```
 
 2. When prompted, choose the following options:
@@ -25,7 +25,7 @@ cd droply
    - ESLint: Yes
    - Tailwind CSS: Yes
    - App Router: Yes
-   - Import alias: Yes (default: @/*)
+   - Import alias: Yes (default: @/\*)
 
 ## Step 2: Install Dependencies
 
@@ -119,9 +119,9 @@ export default {
 
 ```typescript
 /**
- * Database Schema for Droply
+ * Database Schema for Droplix
  *
- * This file defines the database structure for our Droply application.
+ * This file defines the database structure for our Droplix application.
  * We're using Drizzle ORM with PostgreSQL (via Neon) for our database.
  */
 
@@ -138,7 +138,7 @@ import { relations } from "drizzle-orm";
 /**
  * Files Table
  *
- * This table stores all files and folders in our Droply.
+ * This table stores all files and folders in our Droplix.
  * - Both files and folders are stored in the same table
  * - Folders are identified by the isFolder flag
  * - Files/folders can be nested using the parentId (creating a tree structure)
@@ -228,7 +228,7 @@ import { db } from "./index";
 // This script will run all migrations in the drizzle directory
 async function main() {
   console.log("Running migrations...");
-  
+
   try {
     await migrate(db, { migrationsFolder: "drizzle" });
     console.log("Migrations completed successfully");
@@ -236,7 +236,7 @@ async function main() {
     console.error("Error running migrations:", error);
     process.exit(1);
   }
-  
+
   process.exit(0);
 }
 
@@ -264,17 +264,10 @@ import { authMiddleware } from "@clerk/nextjs";
 
 export default authMiddleware({
   // Public routes that don't require authentication
-  publicRoutes: [
-    "/",
-    "/sign-in(.*)",
-    "/sign-up(.*)",
-    "/api/imagekit-auth",
-  ],
-  
+  publicRoutes: ["/", "/sign-in(.*)", "/sign-up(.*)", "/api/imagekit-auth"],
+
   // Routes that can be accessed by authenticated users or via an API key
-  ignoredRoutes: [
-    "/api/webhooks(.*)",
-  ],
+  ignoredRoutes: ["/api/webhooks(.*)"],
 });
 
 export const config = {
@@ -323,7 +316,7 @@ export default function Providers({ children }: ProvidersProps) {
         >
           <ToastProvider>
             <VisuallyHidden>
-              <h1>Droply - Simple File Storage</h1>
+              <h1>Droplix - Simple File Storage</h1>
             </VisuallyHidden>
             {children}
           </ToastProvider>
@@ -342,7 +335,7 @@ import type { Metadata } from "next";
 import Providers from "./providers";
 
 export const metadata: Metadata = {
-  title: "Droply - Simple File Storage",
+  title: "Droplix - Simple File Storage",
   description: "A simple file storage application",
 };
 
